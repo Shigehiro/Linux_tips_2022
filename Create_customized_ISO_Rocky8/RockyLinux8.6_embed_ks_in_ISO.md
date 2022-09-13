@@ -8,6 +8,7 @@
   - [5.1. Install RockyLinux manually from an original ISO](#51-install-rockylinux-manually-from-an-original-iso)
   - [5.2. Make the customized ISO](#52-make-the-customized-iso)
   - [5.3. Install RockyLinux with the customized ISO](#53-install-rockylinux-with-the-customized-iso)
+- [6. Error when making an ISO](#6-error-when-making-an-iso)
 
 # 2. Description
 
@@ -195,3 +196,18 @@ $ sudo implantisomd5 ~/rl8_test.iso
 Prepare the same hardware spec VM(vNICs, Disk size, UEFI boot) and install RockyLinux VM with the customized ISO.
 After booting from the ISO, select `Install Rocky Linux 8` on the instllation menu.
 The instllation will automatically start.
+
+# 6. Error when making an ISO
+
+If you see an error as below when making an ISO, try adding `-joliet-long `
+
+```text
+$ sudo mkisofs -o ~/rl8_test.iso -b isolinux/isolinux.bin -U -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -V "RHEL-8-6-0-BaseOS-x86_64" .
+
+genisoimage: Error: ./AppStream/Packages/clang-resource-filesystem-13.0.1-1.module+el8.6.0+14118+d530a951.i686.rpm and ./AppStream/Packages/clang-resource-filesystem-13.0.1-1.module+el8.6.0+14118+d530a951.x86_64.rpm have the same Joliet name
+Joliet tree sort failed. The -joliet-long switch may help you.
+```
+
+```text
+$ sudo mkisofs -o ~/rl8_test.iso -b isolinux/isolinux.bin -joliet-long -J -R -l -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -graft-points -V "RHEL-8-6-0-BaseOS-x86_64" .
+```
