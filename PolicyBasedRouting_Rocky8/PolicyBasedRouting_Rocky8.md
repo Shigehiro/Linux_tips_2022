@@ -25,7 +25,7 @@ vm01 has three networks
 - bond0: 192.168.221.10/24 (default gateway 192.168.221.254)
 - bond1: 192.168.222.10/24 (configure PBR)
 
-Configure Policy Based Routing(PBR) to replay a packet from an incomming interface
+Configure PBR to reply packets from an incomming interface
 - If vm01 recieves a packet from eth0, sends a packet to 192.168.220.254 from dev eth0(PBR)
 - If vm01 recieves a packet from bond0, sends a packet to 192.168.221.254 from dev bond0(Default gateway)
 - If vm01 recieves a packet from bond1, sends a packet to 192.168.222.254 from dev bond1(PBR)
