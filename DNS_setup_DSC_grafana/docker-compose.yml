@@ -1,0 +1,23 @@
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - monitoring
+    volumes:
+      - /vol/dns/monitor/volumes/grafana-data:/var/lib/grafana
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    networks:
+      - monitoring
+    volumes:
+      - /vol/dns/monitor/volumes/influxdb-data:/var/lib/influxdb
+networks:
+  monitoring:
