@@ -263,6 +263,9 @@ exit
 # docker compose restart
 ```
 
+If you suffer from installing plugins due to proxy issues or whatever, try this.
+- https://github.com/grafana/piechart-panel#alternative-installation-methods
+
 ## 6.4. configure a data source(grafana)
 
 add a data source 
