@@ -89,6 +89,7 @@ install dsc.
 # cp /etc/dsc/dsc.conf.sample /etc/dsc/dsc.conf
 ```
 
+edit dsc.conf to meet your environment.
 ```text
 # grep ^run_dir /etc/dsc/dsc.conf
 run_dir "/var/lib/dsc";
