@@ -72,7 +72,7 @@ dsc-debugsource.x86_64 : Debug sources for package dsc
 
 install dsc.
 ```text
-# dns install -y dsc
+# dnf install -y dsc
 ```
 
 ## 5.1. config
