@@ -367,6 +367,8 @@ After=network.target
 [Service]
 Type=forking
 ExecStart=/usr/bin/dsc /etc/dsc/dsc.conf -T
+ExecStop=/bin/kill -15 $MAINPID
+ExecReload=/bin/kill -s HUP $MAINPID
 
 [Install]
 WantedBy=multi-user.target
