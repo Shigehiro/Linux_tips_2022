@@ -62,15 +62,6 @@ Domain 'rocky87-ks' has been undefined
 
 $ sudo mv /storage/kvm_images/rocky87-ks.qcow2 .
 
-$ virsh domblklist rocky87-ks
- Target   Source
-------------------------------------------------
- vda      /storage/kvm_images/rocky87-ks.qcow2
- sda      -
-
-$ virsh undefine rocky87-ks
-Domain 'rocky87-ks' has been undefined
-
 $ sudo virt-sparsify --compress rocky87-ks.qcow2 rocky87-template.qcow2
 
 $ ls -lh *.qcow2
