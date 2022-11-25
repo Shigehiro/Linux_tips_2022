@@ -19,8 +19,8 @@ Here is how to create a custom template image for KVM.
 
 # 4. Environment
 
-Host OS : Ubuntu 22.04
-VM : Rocky Linux 8.7
+- Host OS : Ubuntu 22.04
+- VM : Rocky Linux 8.7
 
 # 5. Walkthrough
 
